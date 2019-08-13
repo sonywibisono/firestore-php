@@ -134,7 +134,13 @@ class DocumentSnapshot implements \ArrayAccess
             ? $this->info['readTime']
             : null;
     }
-
+    //get Document ID from snapshot
+    public function id()
+        {
+            if( !$this->exists || $this->reference==null) return null;
+            $path = explode('/',  $this->reference->uri()->getPath());
+            return (end($path));
+        }
     /**
      * Get the Document Create Timestamp.
      *

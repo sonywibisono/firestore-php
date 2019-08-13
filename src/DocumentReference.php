@@ -83,7 +83,10 @@ class DocumentReference
 
         return $this;
     }
-
+    //URI for purpose get id in document snapshot
+    public function uri(){
+          return $this->uri;
+        }
     /**
      * Returns a data snapshot of the current location.
      *
